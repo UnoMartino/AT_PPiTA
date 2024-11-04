@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Moje Hobby</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #121212;
+            color: #ffffff;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 60px;
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(10px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+            z-index: 1000;
+        }
+
+        header h1 {
+            margin: 0;
+            color: #00ffcc;
+        }
+
+        .container {
+            display: flex;
+            margin-top: 60px; /* To account for the header */
+            height: calc(100vh - 60px);
+        }
+
+        .sidebar {
+            width: 200px;
+            background: rgba(30, 30, 30, 0.8);
+            padding: 20px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+            z-index: 10;
+        }
+
+        .sidebar a {
+            color: #00ffcc;
+            text-decoration: none;
+            display: block;
+            margin-bottom: 15px;
+        }
+
+        .content {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: repeat(2, auto);
+            gap: 20px;
+            padding: 20px;
+            width: 100%;
+        }
+
+        .tile {
+            background: rgba(50, 50, 50, 0.8);
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 4px 20px rgba(0, 255, 255, 0.3);
+            /* backdrop-filter: blur(10px); */
+            transition: transform 0.3s;
+            position: relative;
+        }
+
+        .tile:hover {
+            transform: scale(1.05);
+        }
+
+        .gallery {
+            display: flex;
+            overflow: hidden;
+            border-radius: 10px;
+            position: relative;
+            height: 200px; /* Wysokość galerii */
+        }
+
+        .gallery img {
+            width: 100%;
+            height: auto;
+            transition: opacity 1s;
+            position: absolute; /* Umożliwia nakładanie zdjęć */
+            top: 0;
+            left: 0;
+        }
+
+        .gallery img.hidden {
+            opacity: 0;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+            }
+
+            .content {
+                grid-template-columns: 1fr;
+                grid-template-rows: repeat(4, auto);
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Moje Hobby</h1>
+</header>
+
+<div class="container">
+    <div class="sidebar">
+        <h2>Menu</h2>
+        <a href="#photography">Fotografia</a>
+        <a href="#gaming">Gry Komputerowe</a>
+        <a href="#books">Książki</a>
+        <a href="#travel">Podróże</a>
+    </div>
+    <div class="content">
+        <div id="photography" class="tile">
+            <h2>Fotografia</h2>
+            <p>Uwielbiam uchwytywać piękne chwile i krajobrazy poprzez moją kamerę. Fotografia to dla mnie sposób na wyrażenie siebie i dzielenie się z innymi.</p>
+            <div class="gallery">
+                <img src="https://via.placeholder.com/400x300/ff7f50/ffffff?text=Fotografia+1" alt="Fotografia 1">
+                <img class="hidden" src="https://via.placeholder.com/400x300/4682b4/ffffff?text=Fotografia+2" alt="Fotografia 2">
+            </div>
+        </div>
+        <div id="gaming" class="tile">
+            <h2>Gry Komputerowe</h2>
+            <p>Gry komputerowe to dla mnie nie tylko forma rozrywki, ale także sposób na poznawanie nowych światów i rozwijanie umiejętności. Lubię grać w różne gatunki gier, od RPG po strzelanki.</p>
+            <div class="gallery">
+                <img src="https://via.placeholder.com/400x300/32cd32/ffffff?text=Gry+1" alt="Gry 1">
+                <img class="hidden" src="https://via.placeholder.com/400x300/8a2be2/ffffff?text=Gry+2" alt="Gry 2">
+            </div>
+        </div>
+        <div id="books" class="tile">
+            <h2>Książki</h2>
+            <p>Czytanie książek to moja pasja. Uwielbiam zanurzać się w różne światy i odkrywać nowe historie. Książki rozwijają wyobraźnię i są źródłem wiedzy.</p>
+            <div class="gallery">
+                <img src="https://via.placeholder.com/400x300/ff4500/ffffff?text=Książki+1" alt="Książki 1">
+                <img class="hidden" src="https://via.placeholder.com/400x300/ffd700/ffffff?text=Książki+2" alt="Książki 2">
+            </div>
+        </div>
+        <div id="travel" class="tile">
+            <h2>Podróże</h2>
+            <p>Podróżowanie to dla mnie sposób na odkrywanie nowych kultur i miejsc. Każda podróż przynosi nowe doświadczenia i wspomnienia, które są bezcenne.</p>
+            <div class="gallery">
+                <img src="https://via.placeholder.com/400x300/ff69b4/ffffff?text=Podróże+1" alt="Podróże 1">
+                <img class="hidden" src="https://via.placeholder.com/400x300/20b2aa/ffffff?text=Podróże+2" alt="Podróże 2">
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    const galleries = document.querySelectorAll('.gallery');
+    galleries.forEach(gallery => {
+        const images = gallery.querySelectorAll('img');
+        let currentIndex = 0;
+
+        function showNextImage() {
+            images[currentIndex].classList.add('hidden');
+            currentIndex = (currentIndex + 1) % images.length;
+            images[currentIndex].classList.remove('hidden');
+        }
+
+        setInterval(showNextImage, 3000); // Zmiana co 3 sekundy
+    });
+</script>
+
+</body>
+</html>

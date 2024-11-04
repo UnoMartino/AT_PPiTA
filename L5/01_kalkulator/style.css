@@ -1,0 +1,11 @@
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 5px;
+    width: 300px;
+    margin-top: 5px;
+}
+
+input[type="text"] {
+    text-align: right;
+}

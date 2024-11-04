@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Countries</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        input {
+            padding: 5px;
+            margin: 5px 0;
+        }
+        button {
+            padding: 5px 10px;
+            margin: 5px 0;
+            cursor: pointer;
+        }
+        img {
+            margin: 5px 0;
+        }
+        .main {
+            width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+            border: 1px solid #ccc;
+            border-radius: 15px;
+            background-color: gray;
+        }
+        .main  {
+            text-align: center;
+        }
+        .main button {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <form onsubmit="getInfo(); return false;" >
+            <label for="country">Nazwa państwa: </label>
+            <input type="text" name="country" id="country" >
+            <br/> 
+            <button onclick="getInfo()">Pobierz informacje o państwie</button>
+            <br/><br/>
+        </form>
+        Nazwa państwa: <br><span id="countryName"></span>
+        <br/><br>
+        Pełna nazwa państwa: <br><span id="countryFullName"></span>
+        <br/><br>
+        Kontynent: <br><span id="continent"></span>
+        <br/><br>
+        Stolica: <br><span id="capital"></span>
+        <br/><br>
+        Liczba mieszkańców: <br><span id="population"></span>
+        <br/><br>
+        Godło: <br><img id="coatOfArms" src="" width="200px">
+        <br/><br>
+        Flaga: <br><img id="flag" src="" width="200px">
+        <br/><br>    
+    </div>
+    
+    <script src="main.js"></script>
+</body>
+</html>
