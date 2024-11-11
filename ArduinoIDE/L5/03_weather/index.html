@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pogoda</title>
+</head>
+
+<body>
+    <div>
+        <canvas id="myChart"></canvas>
+    </div>
+    <form onsubmit="getInfo(); return false;" >
+        <label for="city">Miasto: </label>
+        <input type="text" name="city" id="city" >
+        <br/> 
+        <button type="submit">Pobierz pogodę</button>
+        <br/><br/>
+    </form>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <script>
+        function getInfo() {
+            const city = document.getElementById('city').value;
+            fetch(`https://geocoding-api.open-meteo.com/v1/search?name=${city}&count=1&language=en&format=json`)
+                .then(response => response.json())
+                .then(data => {
+                    const latitude = data.results[0].latitude;
+                    const longitude = data.results[0].longitude;
+                    console.log(latitude, longitude);
+                    console.log(data);
+                    fetch(`https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&daily=temperature_2m_max,precipitation_sum&timezone=GMT`)
+                        .then(response => response.json())
+                        .then(data => {
+                            const ctx = document.getElementById('myChart');
+                            new Chart(ctx, {
+                                data: {
+                                    labels: data.daily.time,
+                                    datasets: [{
+                                        type: 'line',
+                                        label: 'Temperatura maksymalna',
+                                        data: data.daily.temperature_2m_max,
+                                        backgroundColor: 'rgba(255, 99, 132, 0.2)',
+                                        borderColor: 'rgba(255, 99, 132, 1)',
+                                        borderWidth: 1,
+                                        cubicInterpolationMode: 'monotone',
+                                        yAxisID: 'y'
+                                    },
+                                    {
+                                        type: 'bar',
+                                        label: 'Suma opadów',
+                                        data: data.daily.precipitation_sum,
+                                        backgroundColor: 'rgba(54, 162, 235, 0.2)',
+                                        borderColor: 'rgba(54, 162, 235, 1)',
+                                        borderWidth: 1,
+                                        yAxisID: 'y1'
+                                    }]
+                                },
+                                options: {
+                                scales: {
+                                    y: {
+                                        type: 'linear',
+                                        position: 'left',
+                                        title: {
+                                            display: true,
+                                            text: 'Temperatura (°C)'
+                                        }
+                                    },
+                                    y1: {
+                                        type: 'linear',
+                                        position: 'right',
+                                        title: {
+                                            display: true,
+                                            text: 'Opady (mm)'
+                                        },
+                                        grid: {
+                                            drawOnChartArea: false // only want the grid lines for one axis to show up
+                                        },
+                                        suggestedMax: (() => {
+                                            const maxPrecipitation = Math.max(...data.daily.precipitation_sum);
+                                            return maxPrecipitation > 5 ? maxPrecipitation + 1 : 5;
+                                        })() // Add dynamic padding
+                                    }
+                                }
+                            }
+                            });
+                            
+                            console.log(data);
+                        });
+                });
+        }
+    </script>
+
+</body>
+
+</html>
