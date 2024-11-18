@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uczelnia>
+    <nazwa>Akademia Tarnowska</nazwa>
+    <nazwa_skrocona>AT</nazwa_skrocona>
+    <wydzialy>
+        <politechniczny>
+            <informatyka katedra="informatyki">
+                <liczba_studentow>500</liczba_studentow>
+                <liczba_pracownikow>20</liczba_pracownikow>
+                <dane_kontaktowe>
+                    <kierownik_katedry>lorem</kierownik_katedry>
+                    <zastepca_kierownika>ipsum</zastepca_kierownika>
+                    <telefon>123456789</telefon>
+                    <email>example@example.com</email>
+                </dane_kontaktowe>
+            </informatyka>
+            <automatyka_i_robotyka katedra="automatyki i robotyki">
+                <liczba_studentow>300</liczba_studentow>
+                <liczba_pracownikow>15</liczba_pracownikow>
+                <dane_kontaktowe>
+                    <kierownik_katedry>lorem</kierownik_katedry>
+                    <zastepca_kierownika>ipsum</zastepca_kierownika>
+                    <telefon>123456789</telefon>
+                    <email>example@example.com</email>
+                </dane_kontaktowe>
+            </automatyka_i_robotyka>
+            <elektronika katedra="elektroniki, telekomunikacji i mechatroniki">
+                <liczba_studentow>400</liczba_studentow>
+                <liczba_pracownikow>25</liczba_pracownikow>
+                <dane_kontaktowe>
+                    <kierownik_katedry>lorem</kierownik_katedry>
+                    <zastepca_kierownika>ipsum</zastepca_kierownika>
+                    <telefon>123456789</telefon>
+                    <email>example@example.com</email>
+                </dane_kontaktowe>
+            </elektronika>
+            <mechatronika katedra="elektroniki, telekomunikacji i mechatroniki">
+                <liczba_studentow>200</liczba_studentow>
+                <liczba_pracownikow>10</liczba_pracownikow>
+                <dane_kontaktowe>
+                    <kierownik_katedry>lorem</kierownik_katedry>
+                    <zastepca_kierownika>ipsum</zastepca_kierownika>
+                    <telefon>123456789</telefon>
+                    <email>example@example.com</email>
+                </dane_kontaktowe>
+            </mechatronika>
+            <elektronika_i_telekomunikacja katedra="elektroniki, telekomunikacji i mechatroniki">
+                <liczba_studentow>300</liczba_studentow>
+                <liczba_pracownikow>15</liczba_pracownikow>
+                <dane_kontaktowe>
+                    <kierownik_katedry>lorem</kierownik_katedry>
+                    <zastepca_kierownika>ipsum</zastepca_kierownika>
+                    <telefon>123456789</telefon>
+                    <email>example@example.com</email>
+                </dane_kontaktowe>
+            </elektronika_i_telekomunikacja>
+            <elektrotechnika katedra="elektrotechniki">
+                <liczba_studentow>400</liczba_studentow>
+                <liczba_pracownikow>25</liczba_pracownikow>
+                <dane_kontaktowe>
+                    <kierownik_katedry>lorem</kierownik_katedry>
+                    <zastepca_kierownika>ipsum</zastepca_kierownika>
+                    <telefon>123456789</telefon>
+                    <email>example@example.com</email>
+                </dane_kontaktowe>
+            </elektrotechnika>
+            <technologie_i_zarzadzanie_produkcja katedra="inżynierii materiałowej">
+                <liczba_studentow>200</liczba_studentow>
+                <liczba_pracownikow>10</liczba_pracownikow>
+                <dane_kontaktowe>
+                    <kierownik_katedry>lorem</kierownik_katedry>
+                    <zastepca_kierownika>ipsum</zastepca_kierownika>
+                    <telefon>123456789</telefon>
+                    <email>example@example.com</email>
+                </dane_kontaktowe>
+            </technologie_i_zarzadzanie_produkcja>
+            <technologia_chemiczna katedra="inżynierii materiałowej">
+                <liczba_studentow>300</liczba_studentow>
+                <liczba_pracownikow>15</liczba_pracownikow>
+                <dane_kontaktowe>
+                    <kierownik_katedry>lorem</kierownik_katedry>
+                    <zastepca_kierownika>ipsum</zastepca_kierownika>
+                    <telefon>123456789</telefon>
+                    <email>example@example.com</email>
+                </dane_kontaktowe>
+            </technologia_chemiczna>
+        </politechniczny>
+        <humanistyczny>
+            <filologia_polska></filologia_polska>
+            <filologia_angielska></filologia_angielska>
+            <filologia_germanska></filologia_germanska>
+            <filologia_romanska></filologia_romanska>
+            <pedagogika></pedagogika>
+            <jezyk_francuski_dla_potrzeb_zawodowych></jezyk_francuski_dla_potrzeb_zawodowych>
+            <psychologia></psychologia>
+            <jezyki_obce_w_komunkacji_biznesowej></jezyki_obce_w_komunkacji_biznesowej>
+        </humanistyczny>
+    </wydzialy>
+    <wladze_uczelni>
+        <rektor>
+            <imie>Jan</imie>
+            <nazwisko>Kowalski</nazwisko>
+            <tytul>profesor nadzwyczajny</tytul>
+        </rektor>
+        <prorektor_ds_studenckich_i_dydaktyki>
+            <imie>Anna</imie>
+            <nazwisko>Nowak</nazwisko>
+            <tytul>profesor nadzwyczajny</tytul>
+        </prorektor_ds_studenckich_i_dydaktyki>
+        <prorektor_ds_nauki_i_rozwoju>
+            <imie>Jan</imie>
+            <nazwisko>Nowak</nazwisko>
+            <tytul>profesor nadzwyczajny</tytul>
+        </prorektor_ds_nauki_i_rozwoju>
+        <kanclerz>
+            <imie>Jan</imie>
+            <nazwisko>Nowak</nazwisko>
+            <tytul>profesor nadzwyczajny</tytul>
+        </kanclerz>
+    </wladze_uczelni>
+    <adres>
+        <ulica>ul. Mickiewicza</ulica>
+        <numer_budynku>1</numer_budynku>
+        <kod_pocztowy>33-100</kod_pocztowy>
+        <miasto>Tarnów</miasto>
+        <panstwo>Polska</panstwo>
+    </adres>
+</uczelnia>

@@ -1,8 +1,6 @@
 /*
  Adapted from the Adafruit and Xark's PDQ graphicstest sketch.
 
- See end of file for original header text and MIT license info.
- 
  This sketch uses the GLCD font only.
 
  Make sure all the display driver and pin connections are correct by
