@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+
+<shiporder orderid="2137"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:noNamespaceSchemaLocation="shiporder.xsd">
+    <orderperson>Jan Kowalski</orderperson>
+    <shipto>
+        <name>Jan Kowalski</name>
+        <address>Mickieiwcza 1</address>
+        <city>Tarnów</city>
+        <zipcode>33-100</zipcode>
+        <country>Polska</country>
+    </shipto>
+    <item>
+        <title>Kremówka</title>
+        <note>Papieska</note>
+        <quantity>1</quantity>
+        <price>21.37</price>
+    </item>
+    
+</shiporder>
