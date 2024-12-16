@@ -15,7 +15,7 @@
 #define AIO_SERVER      "io.adafruit.com"
 #define AIO_SERVERPORT  8883
 #define AIO_USERNAME "unomartino"
-#define AIO_KEY      "aio_fAjT09eo8uRNJOdPrQ7Btx8MOVPt"
+#define AIO_KEY      ""
 
 #define PIN        21
 #define NUMPIXELS 1
